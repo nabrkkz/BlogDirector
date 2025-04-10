@@ -91,10 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const name = encodeURIComponent(this.name.value);
-        const message = encodeURIComponent(this.message.value);
+        const activeLang = document.querySelector('.language-option.active').dataset.lang;
         
-        const mailtoLink = `mailto:nurzhan.zholdybalinov@gmail.com?subject=${name}&body=${message}`;
-        window.location.href = mailtoLink;
+        const nameInput = document.querySelector(`input[name="name"][data-lang="${activeLang}"]`);
+        const messageInput = document.querySelector(`textarea[name="message"][data-lang="${activeLang}"]`);
+        
+        if (nameInput && messageInput) {
+            const name = encodeURIComponent(nameInput.value);
+            const message = encodeURIComponent(messageInput.value);
+            
+            const mailtoLink = `mailto:nurzhan.zholdybalinov@gmail.com?subject=${name}&body=${message}`;
+            window.location.href = mailtoLink;
+        }
     });
 }); 
