@@ -31,7 +31,6 @@ const content = {
             'Dear readers,',
             'It is important for me to hear your voice — your thoughts, ideas, suggestions, and questions. Every message is valuable to me, as it is your support that inspires us to grow and improve.',
             'You now have the opportunity to contact me directly and share anything that concerns you as a reader. I will personally read all your messages and do my best to respond.',
-            'I believe that open and sincere dialogue will bring our library even closer to each of you.',
             'With respect,',
             'Kumis Karsakbaevna Seitova',
             'Director of the National Academic Library of the Republic of Kazakhstan'
@@ -61,20 +60,43 @@ function changeLanguage(lang) {
         positionElement.textContent = content[lang].position;
     }
 
-    document.querySelectorAll('.contact-form [data-lang]').forEach(element => {
-        if (element.dataset.lang === lang) {
-            element.style.display = '';
-        } else {
-            element.style.display = 'none';
-        }
-    });
-
     document.querySelectorAll('.language-option').forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.lang === lang) {
             btn.classList.add('active');
         }
     });
+
+    const formElements = {
+        'rus': {
+            title: 'Связаться со мной',
+            namePlaceholder: 'Ваше имя',
+            messagePlaceholder: 'Ваше сообщение',
+            button: 'Отправить'
+        },
+        'kaz': {
+            title: 'Маған хабарласу',
+            namePlaceholder: 'Аты-жөніңіз',
+            messagePlaceholder: 'Хабарламаңыз',
+            button: 'Жіберу'
+        },
+        'eng': {
+            title: 'Contact Me',
+            namePlaceholder: 'Your Name',
+            messagePlaceholder: 'Your Message',
+            button: 'Send'
+        }
+    };
+
+    const formTitle = document.querySelector('.contact-form h2');
+    const nameInput = document.getElementById('nameInput');
+    const messageInput = document.getElementById('messageInput');
+    const submitButton = document.querySelector('.contact-form button[type="submit"]');
+
+    if (formTitle) formTitle.textContent = formElements[lang].title;
+    if (nameInput) nameInput.placeholder = formElements[lang].namePlaceholder;
+    if (messageInput) messageInput.placeholder = formElements[lang].messagePlaceholder;
+    if (submitButton) submitButton.textContent = formElements[lang].button;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -87,43 +109,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const form = document.querySelector('.contact-form');
+    const form = document.getElementById('contactForm');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const activeLang = document.querySelector('.language-option.active').dataset.lang;
-        
-        const nameInput = document.querySelector(`input[name="name"][data-lang="${activeLang}"]`);
-        const messageInput = document.querySelector(`textarea[name="message"][data-lang="${activeLang}"]`);
+        const nameInput = document.getElementById('nameInput');
+        const messageInput = document.getElementById('messageInput');
         
         if (nameInput && messageInput) {
-            const name = encodeURIComponent(nameInput.value);
-            const message = encodeURIComponent(messageInput.value);
+            const name = nameInput.value;
+            const message = messageInput.value;
             
-            const mailtoLink = `mailto:nurzhan.zholdybalinov@gmail.com?subject=${name}&body=${message}`;
+            const mailtoLink = `mailto:nurzhan.zholdybalinov@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
             window.location.href = mailtoLink;
-
-            const notification = document.querySelector('.success-notification');
-            notification.style.display = 'block';
-            
-            document.querySelectorAll('.success-notification div').forEach(div => {
-                if (div.dataset.lang === activeLang) {
-                    div.style.display = 'block';
-                } else {
-                    div.style.display = 'none';
-                }
-            });
-
-            setTimeout(() => {
-                notification.classList.add('hide');
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                    notification.classList.remove('hide');
-                }, 500);
-            }, 3000);
-
-            nameInput.value = '';
-            messageInput.value = '';
         }
     });
 }); 
