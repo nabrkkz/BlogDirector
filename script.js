@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = encodeURIComponent(this.name.value);
         const message = encodeURIComponent(this.message.value);
         
-        const mailtoLink = `mailto:eskendirhasoiya@gmail.com?subject=${name}&body=${message}`;
+        const mailtoLink = `mailto:nurzhan.zholdybalinov@gmail.com?subject=${name}&body=${message}`;
         window.location.href = mailtoLink;
     });
 }); 
