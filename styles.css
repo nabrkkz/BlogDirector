@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #22603e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    min-height: 131px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    width: 100%;
+}
+
+.logos {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main {
+    width: 100px;
+    margin-top: 10px;
+    height: 51px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.header-text {
+    color: #fff;
+    font-size: 14px;
+    max-width: 465px;
+    min-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.header-text:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 40px;
+    top: 5px;
+    gap: 3px;
+    padding-left: 60px;
+    padding-top: 20px;
+    z-index: 10;
+}
+
+.language-option {
+    background-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    color: rgb(252, 252, 252);
+    cursor: pointer;
+    display: block;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    height: 26px;
+    line-height: 18px;
+    margin-right: 5px;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    width: 28.734375px;
+}
+
+.language-option:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+main {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.avatar-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+}
+
+.avatar {
+    width: 100%;
+    max-width: 250px;
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.director-name {
+    text-align: center;
+}
+
+.director-name h2 {
+    color: #22603e;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.director-name p {
+    color: #666;
+    font-size: 14px;
+}
+
+.about-director {
+    flex: 2;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.about-director p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.about-director h1 {
+    margin-bottom: 30px;
+    color: #22603e;
+    font-size: 28px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: #666;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #22603e;
+}
+
+footer {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+    color: #22603e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #22603e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #1a4a30;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+    .header-content {
+        padding: 0 20px;
+    }
+    
+    main {
+        padding: 30px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .avatar-section {
+        position: static;
+        margin-bottom: 30px;
+    }
+    
+    .avatar {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        min-height: auto;
+        padding: 15px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        order: 1;
+    }
+    
+    .logos {
+        position: static;
+        transform: none;
+        order: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .logo-main {
+        margin-bottom: 10px;
+    }
+    
+    .header-text {
+        order: 1;
+        margin-bottom: 10px;
+    }
+    
+    .language-selector {
+        position: static;
+        padding: 0;
+        justify-content: center;
+        margin: 0;
+        order: 2;
+        left: auto;
+        top: auto;
+        padding-left: 0;
+        padding-top: 0;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    main {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .about-director {
+        padding: 20px;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-text {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    
+    .logo-main {
+        width: 80px;
+        height: 41px;
+    }
+    
+    .director-name h2 {
+        font-size: 18px;
+    }
+    
+    .director-name p {
+        font-size: 12px;
+    }
+    
+    .about-director p {
+        font-size: 14px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .language-selector {
+        margin-top: 8px;
+    }
+}
+
+/* Поддержка мобильных устройств */
+@media (max-width: 480px) {
+    .header-content {
+        padding: 10px;
+    }
+    
+    .social-media {
+        justify-content: center;
+    }
+    
+    .social-icon {
+        font-size: 20px;
+    }
+    
+    footer {
+        padding: 20px;
+    }
+}
+
+/* Поддержка очень маленьких экранов */
+@media (max-width: 360px) {
+    .header-text {
+        font-size: 11px;
+    }
+    
+    .logo-main {
+        width: 70px;
+        height: 36px;
+    }
+    
+    .language-selector {
+        margin-top: 6px;
+    }
+} 

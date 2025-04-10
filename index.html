@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог Директора</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="language-selector">
+            <div class="language-option" data-lang="rus">Рус</div>
+            <div class="language-option" data-lang="kaz">Қаз</div>
+            <div class="language-option" data-lang="eng">Eng</div>
+        </div>
+        <div class="header-content">
+            <div class="logos">
+                <a href="https://nabrk.kz" target="_blank">
+                    <img src="images/logoMain.png" alt="Основной логотип" class="logo-main">
+                </a>
+                <a href="https://nabrk.kz" target="_blank" style="text-decoration: none;">
+                    <div class="header-text">Қазақстан Республикасының Ұлттық академиялық кітапханасы</div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-director">
+            <h1>Дорогие читатели!</h1>
+            <p>Мне важно слышать ваш голос — ваши мысли, идеи, предложения и вопросы. Каждое обращение для меня ценно, ведь именно вы вдохновляете нас развиваться и становиться лучше.</p>
+            <p>Теперь у вас есть возможность напрямую делиться со мной тем, что волнует вас как читателя. Я буду лично читать все ваши сообщения и стараться отвечать на них.</p>
+            <p>Верю, что открытый и доверительный диалог сделает нашу библиотеку ещё ближе к каждому из вас.</p>
+            <p>С уважением,</p>
+            <p>Сеитова Күмис Карсакбаевна</p>
+            <p>Директор Национальной академической библиотеки Республики Казахстан</p>
+        </section>
+
+        <aside class="avatar-section">
+            <div class="avatar">
+                <img src="images/avatar.jpg" alt="Аватарка директора">
+            </div>
+            <div class="director-name">
+                <h2>Сеитова Күмис Карсакбаевна</h2>
+                <p>Директор Национальной академической библиотеки Республики Казахстан</p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.facebook.com/share/15gtL7SYHV/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/akademiyalik_kitapkhana?igsh=eHVldGYzM3BsZGMy" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <form class="contact-form" action="mailto:nurzhan.zholdybalinov@gmail.com" method="post" enctype="text/plain">
+            <h2 data-lang="rus">Связаться со мной</h2>
+            <h2 data-lang="kaz" style="display: none;">Менімен хабарласу</h2>
+            <h2 data-lang="eng" style="display: none;">Contact Me</h2>
+            <div class="form-group">
+                <input type="text" name="name" data-lang="rus" placeholder="Ваше имя" required>
+                <input type="text" name="name" data-lang="kaz" placeholder="Аты-жөніңіз" style="display: none;" required>
+                <input type="text" name="name" data-lang="eng" placeholder="Your Name" style="display: none;" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" data-lang="rus" placeholder="Ваше сообщение" required></textarea>
+                <textarea name="message" data-lang="kaz" placeholder="Сіздің хабарламаңыз" style="display: none;" required></textarea>
+                <textarea name="message" data-lang="eng" placeholder="Your Message" style="display: none;" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" data-lang="rus">Отправить</button>
+            <button type="submit" class="submit-btn" data-lang="kaz" style="display: none;">Хабарламаны жіберу</button>
+            <button type="submit" class="submit-btn" data-lang="eng" style="display: none;">Send</button>
+        </form>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
