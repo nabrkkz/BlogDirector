@@ -102,6 +102,28 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const mailtoLink = `mailto:nurzhan.zholdybalinov@gmail.com?subject=${name}&body=${message}`;
             window.location.href = mailtoLink;
+
+            const notification = document.querySelector('.success-notification');
+            notification.style.display = 'block';
+            
+            document.querySelectorAll('.success-notification div').forEach(div => {
+                if (div.dataset.lang === activeLang) {
+                    div.style.display = 'block';
+                } else {
+                    div.style.display = 'none';
+                }
+            });
+
+            setTimeout(() => {
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    notification.classList.remove('hide');
+                }, 500);
+            }, 3000);
+
+            nameInput.value = '';
+            messageInput.value = '';
         }
     });
 }); 
